@@ -70,3 +70,16 @@ git st
 git ci -am "initial commit"
 git st
 l
+git st
+git st
+git add setup-speedbar.el
+git st
+git add 
+git add .
+git st
+git ci -am "Eshell. Speedbar. Autocomplete. etc"
+git remote add origin https:/github.com/avovsya/.emacs.d.git
+git push -u origin master
+git remote rm origin
+git remote add origin https://github.com/avovsya/.emacs.d.git
+git push -u origin master

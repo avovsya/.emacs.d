@@ -38,6 +38,9 @@
 ;; Eval buffer
 (global-set-key (kbd "C-c v") 'eval-buffer)
 
+;; Eshell
+(global-set-key (kbd "C-x m") 'eshell)
+
 ;;; Window management
 (evil-leader/set-key "\\" 'split-right)
 
@@ -47,12 +50,19 @@
 
 (evil-leader/set-key "_" 'split-up)
 
-(evil-leader/set-key "qw" 'delete-window)
-(evil-leader/set-key "bw" 'kill-this-buffer)
+(evil-leader/set-key "w" 'delete-window)
+(evil-leader/set-key "q" 'kill-this-buffer)
 
 ;;; =============================================
 ;;; Evil Mode
 ;;; =============================================
+
+(define-key evil-insert-state-map (kbd "C-h") 'left-char)
+(define-key evil-insert-state-map (kbd "C-j") 'next-line)
+(define-key evil-insert-state-map (kbd "C-k") 'previous-line)
+(define-key evil-insert-state-map (kbd "C-l") 'right-char)
+;; (define-key evil-insert-state-map (kbd "M-h"))
+
 (define-key evil-visual-state-map ">" 'shift-region-right)
 (define-key evil-visual-state-map "<" 'shift-region-left)
 
@@ -70,3 +80,4 @@
 (evil-leader/set-key "l" 'next-buffer-skip-mess)
 (evil-leader/set-key "h" 'prev-buffer-skip-mess)
 (evil-leader/set-key "es" 'create-scratch-buffer)
+(evil-leader/set-key "gw" 'toggle-truncate-lines)

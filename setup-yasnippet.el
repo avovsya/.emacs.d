@@ -4,4 +4,4 @@
 (ac-config-default)
 
 (yas-global-mode 1)
-(yas/load-directory "~/.emacs.d/yasnippets")
+(yas/load-directory "~/.emacs.d/site-lisp/snippets")

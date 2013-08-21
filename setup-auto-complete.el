@@ -19,7 +19,8 @@
                                           '(
                                            ac-source-symbols
                                            ac-source-features
-
+                                           ac-source-filename
+                                           ac-source-words-in-same-mode-buffers
                                            ac-source-functions
                                            ac-source-yasnippet
                                            ac-source-variables
@@ -30,12 +31,14 @@
 (add-hook 'prog-mode-hook #'(lambda ()
                               (setq ac-sources
                                     '(
-                                     ac-source-functions
-                                     ac-source-yasnippet
-                                     ac-source-variables
-                                     ac-source-css-property
-                                     ac-source-imenu
-                                     ))))
+                                      ac-source-filename
+                                      ac-source-words-in-same-mode-buffers
+                                      ac-source-functions
+                                      ac-source-yasnippet
+                                      ac-source-variables
+                                      ac-source-css-property
+                                      ac-source-imenu
+                                      ))))
 
 
 ;; Eshell autocomplete
