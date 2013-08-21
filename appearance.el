@@ -7,6 +7,8 @@
 ;; Show line numbers
 (global-linum-mode 1)
 
+(add-hook 'speedbar-mode-hook 'linum-mode)
+
 (dolist
     (path (directory-files custom-theme-directory t "\\w+"))
   (when (file-directory-p path)
@@ -43,4 +45,3 @@
       scroll-down-aggressively 0.01)
 (setq-default scroll-up-aggressively 0.01
               scroll-down-aggressively 0.01)
-

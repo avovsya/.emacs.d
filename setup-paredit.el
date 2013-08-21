@@ -1,4 +1,7 @@
 (require 'paredit)
 (require 'paredit-everywhere)
 (add-hook 'prog-mode-hook 'paredit-everywhere-mode)
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+(add-hook 'lisp-mode-hook 'paredit-mode)
+(add-hook 'lisp-interaction-mode-hook 'paredit-mode)
 (add-hook 'paredit-mode-hook 'evil-paredit-mode)

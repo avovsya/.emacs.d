@@ -109,3 +109,4 @@
     ;;   (when (file-exists-p user-dir)
     ;;     (mapc 'load (directory-files user-dir t "^[^#].*el$"))))
 ))
+(put 'erase-buffer 'disabled nil)

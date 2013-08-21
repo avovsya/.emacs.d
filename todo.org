@@ -1,9 +1,17 @@
 * Investigation
+** Diff files changes
+   http://www.emacswiki.org/emacs/TrackChanges
+   http://stackoverflow.com/questions/626492/emacs-highlight-buffer-modifications
+** DONE Multiple Eshells
+C-u M-x eshell will create eshell with numeric prefix
+** DONE auto-complete (RET) cancel in Eshells
 ** TODO Ibuffer.
 Search and replace in buffers
 ** TODO Search and replace in files and in project's files
 ** TODO EShell
 ** TODO Dired
+** TODO Speedbar (sr-speedbar)
+   <Backspace> to toggle.
 ** TODO Magit
 * Setup and learn
 ** TODO Language mods
@@ -18,10 +26,11 @@ Search and replace in buffers
 *** Buffers
 *** Tags
 *** Recent
-** TODO Speedbar (sr-speedbar)
 ** TODO Etags
 ** TODO Automatic indentation
+** TODO Skewer mode
 ** TODO Eproject
+** TODO Autocomplete JS2 (ac-js2)
 * Plugins and mods wishlist
 ** TODO JS, HTML, CSS, Lisp and others *Linters*
 ** TODO Node REPL and Swank.js
@@ -36,6 +45,3 @@ Search and replace in buffers
 ** DONE Buffer navigation(next prev)
 ** TODO Prelude shortcuts
 * Notes
-1. Diff files changes
-2. Multiple Eshells
-3. auto-complete (RET) cancel in Eshells

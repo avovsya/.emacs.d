@@ -49,3 +49,24 @@ exit
 cd ~
 clear
 l
+cd .emacs.d/
+git init
+git st
+rm j 
+rm -rf avovsya/
+git st
+git st
+git add .
+git st
+git submodule add https://github.com/avovsya/yasnippets.git
+t st
+git st
+cd yasnippets
+l
+..
+git diff
+git diff
+git st
+git ci -am "initial commit"
+git st
+l
