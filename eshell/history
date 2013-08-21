@@ -1,0 +1,51 @@
+l
+ls -al
+cd ../../../..
+web3
+cd pages-desktop/
+ls -al
+blocks
+ls -al
+..
+search
+ls -al
+search/
+ls -al
+../../
+touch pages-desktop/search/search._deps.js 
+touch pages-desktop/search/search._deps.js 
+make pages-desktop/search/
+git st
+git co dev
+git stash
+git co dev
+git pull origin dev
+git co content-preview
+git rebase dev
+git st
+git mergetool
+git st
+git st
+git add bower.json
+git rebase --continue
+git st
+git clean -f
+git stash apply
+vi
+vim
+exit
+ssh-copy-id solaris.serp.yandex.ru
+ssh nimbula
+exit
+clear
+l
+ls -al
+alias l 'ls -al'
+l
+l
+l
+l | less
+exit
+cd ~
+clear
+l

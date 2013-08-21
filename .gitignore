@@ -1,0 +1,5 @@
+.smex*
+*places*
+elpa/*
+tramp
+*.dat

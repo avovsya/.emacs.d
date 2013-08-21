@@ -1,0 +1,41 @@
+* Investigation
+** TODO Ibuffer.
+Search and replace in buffers
+** TODO Search and replace in files and in project's files
+** TODO EShell
+** TODO Dired
+** TODO Magit
+* Setup and learn
+** TODO Language mods
+   Can be find in Starter-kit, magnars and prelude configs
+*** JS2
+*** Lisp
+*** Paredit
+*** HTML, CSS
+*** Tramp mode
+** TODO Helm
+*** Files
+*** Buffers
+*** Tags
+*** Recent
+** TODO Speedbar (sr-speedbar)
+** TODO Etags
+** TODO Automatic indentation
+** TODO Eproject
+* Plugins and mods wishlist
+** TODO JS, HTML, CSS, Lisp and others *Linters*
+** TODO Node REPL and Swank.js
+** TODO Slime
+** TODO LustyJuggler
+** TODO Act
+* Keybindings
+** TODO C-x f - recent files
+** DONE > - Indent region and reselect region
+** TODO Magnars shortcuts
+** TODO Starter-kit shortcuts
+** DONE Buffer navigation(next prev)
+** TODO Prelude shortcuts
+* Notes
+1. Diff files changes
+2. Multiple Eshells
+3. auto-complete (RET) cancel in Eshells
