@@ -19,25 +19,34 @@
                                           '(
                                            ac-source-symbols
                                            ac-source-features
-                                           ac-source-filename
-                                           ac-source-words-in-same-mode-buffers
-                                           ac-source-functions
-                                           ac-source-yasnippet
-                                           ac-source-variables
-                                           ac-source-css-property
                                            ac-source-imenu
+                                           ac-source-filename
+                                           ac-source-functions
+                                           ac-source-variables
+                                           ac-source-yasnippet
+                                           ac-source-words-in-same-mode-buffers
                                            ))))
 
 (add-hook 'prog-mode-hook #'(lambda ()
                               (setq ac-sources
                                     '(
-                                      ac-source-filename
-                                      ac-source-words-in-same-mode-buffers
-                                      ac-source-functions
-                                      ac-source-yasnippet
-                                      ac-source-variables
-                                      ac-source-css-property
                                       ac-source-imenu
+                                      ac-source-variables
+                                      ac-source-functions
+                                      ac-source-filename
+                                      ac-source-yasnippet
+                                      ac-source-words-in-same-mode-buffers
+                                      ))))
+
+(add-hook 'css-mode-hook #'(lambda ()
+                              (setq ac-sources
+                                    '(
+                                      ac-source-css-property
+                                      ac-source-variables
+                                      ac-source-functions
+                                      ac-source-filename
+                                      ac-source-yasnippet
+                                      ac-source-words-in-same-mode-buffers
                                       ))))
 
 
@@ -94,15 +103,6 @@
 
 (add-hook 'eshell-mode-hook #'(lambda () (setq ac-sources '(ac-source-pcomplete))))
 (add-to-list 'ac-modes 'eshell-mode)
-
-;;
-
-;; clear the buffer in eshell
-(defun eshell/clear ()
-  "clear the eshell buffer."
-  (interactive)
-  (let ((inhibit-read-only t))
-    (erase-buffer)))
 
 (defun auto-complete-mode-maybe ()
   "No maybe for you. Only AC!"

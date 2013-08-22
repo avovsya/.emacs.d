@@ -4,7 +4,7 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 
-(global-set-key (kbd "C-x f") 'recentf-open-files)
+(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
 
 ;; Regex search by default
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
@@ -53,6 +53,8 @@
 (evil-leader/set-key "w" 'delete-window)
 (evil-leader/set-key "q" 'kill-this-buffer)
 
+(evil-leader/set-key "r" 'rotate-windows)
+
 ;;; =============================================
 ;;; Evil Mode
 ;;; =============================================
@@ -61,7 +63,7 @@
 (define-key evil-insert-state-map (kbd "C-j") 'next-line)
 (define-key evil-insert-state-map (kbd "C-k") 'previous-line)
 (define-key evil-insert-state-map (kbd "C-l") 'right-char)
-;; (define-key evil-insert-state-map (kbd "M-h"))
+(define-key evil-insert-state-map (kbd "C-S-h k") 'describe-key)
 
 (define-key evil-visual-state-map ">" 'shift-region-right)
 (define-key evil-visual-state-map "<" 'shift-region-left)
@@ -73,8 +75,10 @@
 
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 
-(key-chord-define evil-insert-state-map "ii" 'imenu-anywhere)
-(key-chord-define evil-normal-state-map "ii" 'imenu-anywhere)
+;; (key-chord-define evil-insert-state-map "ii" 'imenu-anywhere)
+;; (key-chord-define evil-normal-state-map "ii" 'imenu-anywhere)
+(key-chord-define evil-insert-state-map "ii" 'ido-imenu)
+(key-chord-define evil-normal-state-map "ii" 'ido-imenu)
 
 (evil-leader/set-leader ",")
 (evil-leader/set-key "l" 'next-buffer-skip-mess)

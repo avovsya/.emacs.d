@@ -1,14 +1,3 @@
-l
-ls -al
-cd ../../../..
-web3
-cd pages-desktop/
-ls -al
-blocks
-ls -al
-..
-search
-ls -al
 search/
 ls -al
 ../../
@@ -83,3 +72,57 @@ git push -u origin master
 git remote rm origin
 git remote add origin https://github.com/avovsya/.emacs.d.git
 git push -u origin master
+git st
+git add .
+cd site-lisp/snippets/
+git st
+.git/modules/
+cd .git/modules
+l
+cd .git
+cd ./.git
+rm -rf .git
+l
+rm .gitignore README.markdown 
+..
+..
+rm .gitmodules
+git st
+git add .
+git st
+git rm .gitmodules
+git rm yasnippets
+git st
+git ci -am "Removed yasnippet submodule. Moved to folder in site-lisp"
+git push
+node
+brew install node
+brew
+pwd
+..
+node
+brew
+sudo
+clear
+node
+npm
+clear
+git
+node
+brew
+vim
+gi
+gi
+tou
+tou
+to
+gi
+git
+tou
+gi
+gi
+gi
+git
+node
+node
+node

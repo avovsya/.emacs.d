@@ -30,10 +30,12 @@
                       auto-complete
                       sr-speedbar
                       yasnippet
+                      sublime-themes
+                      s
 
                       ;; language modes
                       slime
-                      slime-repl
+                      ;; slime-repl
                       nodejs-repl
 
                       simple-httpd

@@ -1,5 +1,5 @@
 * Investigation
-** Diff files changes
+** TODO Diff files changes
    http://www.emacswiki.org/emacs/TrackChanges
    http://stackoverflow.com/questions/626492/emacs-highlight-buffer-modifications
 ** DONE Multiple Eshells
@@ -7,13 +7,19 @@ C-u M-x eshell will create eshell with numeric prefix
 ** DONE auto-complete (RET) cancel in Eshells
 ** TODO Ibuffer.
 Search and replace in buffers
-** TODO Search and replace in files and in project's files
 ** TODO EShell
 ** TODO Dired
-** TODO Speedbar (sr-speedbar)
+*** http://www.emacswiki.org/DiredDetails
+** DONE Speedbar (sr-speedbar)
    <Backspace> to toggle.
+** TODO AutoComplete slime - https://github.com/purcell/ac-slimxe
 ** TODO Magit
+** TODO Emacs powerline - https://github.com/milkypostman/powerline
 * Setup and learn
+** TODO Search and replace in files and in project's files
+** TODO Ace jump(EasyMove.vim)
+** TODO Ace jump buffer(LustyJuggler
+** TODO http://ternjs.net/
 ** TODO Language mods
    Can be find in Starter-kit, magnars and prelude configs
 *** JS2
@@ -29,8 +35,11 @@ Search and replace in buffers
 ** TODO Etags
 ** TODO Automatic indentation
 ** TODO Skewer mode
+   Swank-js alternative
 ** TODO Eproject
 ** TODO Autocomplete JS2 (ac-js2)
+   https://github.com/ScottyB/ac-js2
+** TODO Autocomplete fuzzy-matching
 * Plugins and mods wishlist
 ** TODO JS, HTML, CSS, Lisp and others *Linters*
 ** TODO Node REPL and Swank.js
@@ -38,10 +47,11 @@ Search and replace in buffers
 ** TODO LustyJuggler
 ** TODO Act
 * Keybindings
-** TODO C-x f - recent files
+** DONE C-x f - recent files
 ** DONE > - Indent region and reselect region
 ** TODO Magnars shortcuts
 ** TODO Starter-kit shortcuts
 ** DONE Buffer navigation(next prev)
 ** TODO Prelude shortcuts
 * Notes
+(fset 'quick-switch-buffer [?\C-x ?b return])
