@@ -35,11 +35,6 @@
         ("IMPEDED" . (:foreground "red" :weight bold))
         ))
 
-(when window-system
-  (setq frame-title-format '(buffer-file-name "%f" ("%b")))
-  (tooltip-mode -1)
-  (blink-cursor-mode -1))
-
 ;; Scroll off
 (setq scroll-margin 999
       scroll-conservatively 1000

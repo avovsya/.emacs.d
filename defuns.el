@@ -137,74 +137,48 @@ od tempor incididunt ut labore et dolore magna aliqua. Ut enim"
   (split-window-below)
   (windmove-down))
 
-;; Buffer defuns
-(defun rotate-windows ()
-  "Rotate your windows"
-  (interactive)
-  (cond ((not (> (count-windows)1))
-         (message "You can't rotate a single window!"))
-        (t
-         (setq i 1)
-         (setq numWindows (count-windows))
-         (while  (< i numWindows)
-           (let* (
-                  (w1 (elt (window-list) i))
-                  (w2 (elt (window-list) (+ (% i numWindows) 1)))
+;; (defun ido-imenu ()
+;;   "Update the imenu index and then use ido to select a symbol to navigate to.
+;; Symbols matching the text at point are put first in the completion list."
+;;   (interactive)
+;;   (imenu--make-index-alist)
+;;   (let ((name-and-pos '())
+;;         (symbol-names '()))
+;;     (flet ((addsymbols (symbol-list)
+;;                        (when (listp symbol-list)
+;;                          (dolist (symbol symbol-list)
+;;                            (let ((name nil) (position nil))
+;;                              (cond
+;;                               ((and (listp symbol) (imenu--subalist-p symbol))
+;;                                (addsymbols symbol))
 
-                  (b1 (window-buffer w1))
-                  (b2 (window-buffer w2))
+;;                               ((listp symbol)
+;;                                (setq name (car symbol))
+;;                                (setq position (cdr symbol)))
 
-                  (s1 (window-start w1))
-                  (s2 (window-start w2))
-                  )
-             (set-window-buffer w1  b2)
-             (set-window-buffer w2 b1)
-             (set-window-start w1 s2)
-             (set-window-start w2 s1)
-             (setq i (1+ i)))))))
+;;                               ((stringp symbol)
+;;                                (setq name symbol)
+;;                                (setq position (get-text-property 1 'org-imenu-marker symbol))))
 
-(defun ido-imenu ()
-  "Update the imenu index and then use ido to select a symbol to navigate to.
-Symbols matching the text at point are put first in the completion list."
-  (interactive)
-  (imenu--make-index-alist)
-  (let ((name-and-pos '())
-        (symbol-names '()))
-    (flet ((addsymbols (symbol-list)
-                       (when (listp symbol-list)
-                         (dolist (symbol symbol-list)
-                           (let ((name nil) (position nil))
-                             (cond
-                              ((and (listp symbol) (imenu--subalist-p symbol))
-                               (addsymbols symbol))
-
-                              ((listp symbol)
-                               (setq name (car symbol))
-                               (setq position (cdr symbol)))
-
-                              ((stringp symbol)
-                               (setq name symbol)
-                               (setq position (get-text-property 1 'org-imenu-marker symbol))))
-
-                             (unless (or (null position) (null name))
-                               (add-to-list 'symbol-names name)
-                               (add-to-list 'name-and-pos (cons name position))))))))
-      (addsymbols imenu--index-alist))
-    ;; If there are matching symbols at point, put them at the beginning of `symbol-names'.
-    (let ((symbol-at-point (thing-at-point 'symbol)))
-      (when symbol-at-point
-        (let* ((regexp (concat (regexp-quote symbol-at-point) "$"))
-               (matching-symbols (delq nil (mapcar (lambda (symbol)
-                                                     (if (string-match regexp symbol) symbol))
-                                                   symbol-names))))
-          (when matching-symbols
-            (sort matching-symbols (lambda (a b) (> (length a) (length b))))
-            (mapc (lambda (symbol) (setq symbol-names (cons symbol (delete symbol symbol-names))))
-                  matching-symbols)))))
-    (let* ((selected-symbol (ido-completing-read "Symbol? " symbol-names))
-           (position (cdr (assoc selected-symbol name-and-pos))))
-      (push-mark (point))
-      (goto-char position))))
+;;                              (unless (or (null position) (null name))
+;;                                (add-to-list 'symbol-names name)
+;;                                (add-to-list 'name-and-pos (cons name position))))))))
+;;       (addsymbols imenu--index-alist))
+;;     ;; If there are matching symbols at point, put them at the beginning of `symbol-names'.
+;;     (let ((symbol-at-point (thing-at-point 'symbol)))
+;;       (when symbol-at-point
+;;         (let* ((regexp (concat (regexp-quote symbol-at-point) "$"))
+;;                (matching-symbols (delq nil (mapcar (lambda (symbol)
+;;                                                      (if (string-match regexp symbol) symbol))
+;;                                                    symbol-names))))
+;;           (when matching-symbols
+;;             (sort matching-symbols (lambda (a b) (> (length a) (length b))))
+;;             (mapc (lambda (symbol) (setq symbol-names (cons symbol (delete symbol symbol-names))))
+;;                   matching-symbols)))))
+;;     (let* ((selected-symbol (ido-completing-read "Symbol? " symbol-names))
+;;            (position (cdr (assoc selected-symbol name-and-pos))))
+;;       (push-mark (point))
+;;       (goto-char position))))
 
 (defun recentf-ido-find-file ()
   "Use `ido-completing-read' to \\[find-file] a recent file"
@@ -212,5 +186,30 @@ Symbols matching the text at point are put first in the completion list."
   (if (find-file (ido-completing-read "Find recent file: " recentf-list))
       (message "Opening file...")
     (message "Aborting")))
+
+;; Hardmode
+(defun hardmode-on ()
+  (interactive)
+  (define-key evil-motion-state-map "h" nil)
+  (define-key evil-motion-state-map "j" nil)
+  (define-key evil-motion-state-map "k" nil)
+  (define-key evil-motion-state-map "l" nil)
+  )
+
+(defun hardmode-off ()
+  (interactive)
+  (define-key evil-motion-state-map "h" 'evil-backward-char)
+  (define-key evil-motion-state-map "j" 'evil-next-line)
+  (define-key evil-motion-state-map "k" 'evil-previous-line)
+  (define-key evil-motion-state-map "l" 'evil-forward-char)
+  )
+
+(defun copy-current-file-path ()
+  "Add current file path to kill ring. Limits the filename to project root if possible."
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (kill-new (if eproject-mode
+                  (s-chop-prefix (eproject-root) filename)
+                filename))))
 
 (provide 'defuns)

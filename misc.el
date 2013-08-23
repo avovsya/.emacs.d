@@ -75,7 +75,7 @@ comment as a filename."
 (set-default 'imenu-auto-rescan t)
 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
-;; (when (executable-find ispell-program-name) 
+;; (when (executable-find ispell-program-name)
 ;;       (add-hook 'text-mode-hook 'turn-on-flyspell))
 
 (eval-after-load "ispell"
@@ -87,18 +87,18 @@ comment as a filename."
 
 (random t) ;; Seed the random-number generator
 
-;; Hippie expand: at times perhaps too hip
-(eval-after-load 'hippie-exp
-  '(progn
-     (dolist (f '(try-expand-line try-expand-list try-complete-file-name-partially))
-       (delete f hippie-expand-try-functions-list))
-     
-     ;; Add this back in at the end of the list.
-     (add-to-list 'hippie-expand-try-functions-list 'try-complete-file-name-partially t)))
+;; ;; Hippie expand: at times perhaps too hip
+;; (eval-after-load 'hippie-exp
+;;   '(progn
+;;      (dolist (f '(try-expand-line try-expand-list try-complete-file-name-partially))
+;;        (delete f hippie-expand-try-functions-list))
 
-(eval-after-load 'grep
-  '(when (boundp 'grep-find-ignored-files)
-     (add-to-list 'grep-find-ignored-files "*.class")))
+;;      ;; Add this back in at the end of the list.
+;;      (add-to-list 'hippie-expand-try-functions-list 'try-complete-file-name-partially t)))
+
+;; (eval-after-load 'grep
+;;   '(when (boundp 'grep-find-ignored-files)
+;;      (add-to-list 'grep-find-ignored-files "*.class")))
 
 ;; Cosmetics
 

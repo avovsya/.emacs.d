@@ -25,11 +25,7 @@
 ;; Buffer navigation
 (defun skip-buffer ()
   (interactive)
-  (or
-   (string= "*Messages*" (buffer-name))
-   (string= "*Ibuffer*" (buffer-name))
-   (string= "*Help*" (buffer-name))
-   ))
+  (string-match "\*.*\*" (buffer-name)))
 
 (defun next-buffer-skip-mess ()
   "Move to next(prev) buffer and skip *Messages* buffer"

@@ -10,14 +10,19 @@ Search and replace in buffers
 ** TODO EShell
 ** TODO Dired
 *** http://www.emacswiki.org/DiredDetails
+*** http://emacsmovies.org/blog/2012/12/04/dired/
 ** DONE Speedbar (sr-speedbar)
    <Backspace> to toggle.
 ** TODO AutoComplete slime - https://github.com/purcell/ac-slimxe
 ** TODO Magit
+http://daemianmack.com/magit-cheatsheet.html
+http://magit.github.io/magit/magit.html
+http://vimeo.com/2871241
 ** TODO Emacs powerline - https://github.com/milkypostman/powerline
 * Setup and learn
 ** TODO Search and replace in files and in project's files
 ** TODO Ace jump(EasyMove.vim)
+   http://www.emacswiki.org/emacs/Evil#toc15
 ** TODO Ace jump buffer(LustyJuggler
 ** TODO http://ternjs.net/
 ** TODO Language mods
@@ -54,4 +59,7 @@ Search and replace in buffers
 ** DONE Buffer navigation(next prev)
 ** TODO Prelude shortcuts
 * Notes
+** Hardmode https://github.com/takac/vim-hardtime
+** Tutorials
+   http://ergoemacs.org/emacs/emacs.html
 (fset 'quick-switch-buffer [?\C-x ?b return])

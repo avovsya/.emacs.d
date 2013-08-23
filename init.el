@@ -32,6 +32,7 @@
                       yasnippet
                       sublime-themes
                       s
+                      eproject
 
                       ;; language modes
                       slime
@@ -112,3 +113,4 @@
     ;;     (mapc 'load (directory-files user-dir t "^[^#].*el$"))))
 ))
 (put 'erase-buffer 'disabled nil)
+(put 'dired-find-alternate-file 'disabled nil)
